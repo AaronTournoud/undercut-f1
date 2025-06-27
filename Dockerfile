@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install libfontconfig ffmpeg libgdiplus -y
 
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
-COPY .git .git
+
 COPY ["Directory.Build.props", "Directory.Build.props"]
 COPY ["Directory.Packages.props", "Directory.Packages.props"]
 COPY ["UndercutF1.Data/UndercutF1.Data.csproj", "UndercutF1.Data/"]
